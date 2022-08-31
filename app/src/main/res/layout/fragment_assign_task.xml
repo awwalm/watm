@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- @TODO turn the stylized EditText into a TextInputLayout-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".tasks.AssignTaskFragment">
+
+
+
+    <ScrollView
+        android:id="@+id/atfScrollView"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/dimens"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        tools:context=".tasks.AssignTaskFragment">
+
+        <LinearLayout
+            android:id="@+id/editProfilePage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="false"
+            android:layout_centerHorizontal="false"
+            android:layout_centerVertical="false"
+            android:orientation="vertical"
+            android:background="@color/primaryLight2"
+            android:name="androidx.navigation.fragment.NavHostFragment">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:background="@color/design_default_color_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiko_semibold"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/menu_alpen"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp" >
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/outlinedTargetUserNameTextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/target_user_name"
+                    app:hintTextColor="@color/accentLight"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:background="@color/design_default_color_background"
+                    android:enabled="false">
+
+                    <EditText
+                        android:id="@+id/editTargetUserNameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="14dp"
+                        android:height="50dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:lines="2"
+                        android:inputType="textPersonName">
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/outlinedTargetUserEmailTextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/target_user_email"
+                    app:hintTextColor="@color/accentLight"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="320"
+                    android:background="@color/design_default_color_background"
+                    android:enabled="false">
+
+                    <EditText
+                        android:id="@+id/editTargetUserEmailEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:height="50dp"
+                        android:textSize="14dp"
+                        android:inputType="textEmailAddress"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:lines="2">
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/outlinedCollaboratorEmailTextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/assign_collab"
+                    app:hintTextColor="@color/accentLight"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="320"
+                    android:background="@color/design_default_color_background"
+                    app:helperText="@string/optional"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/accentLight">
+
+                    <EditText
+                        android:id="@+id/editCollaboratorEmailEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:height="50dp"
+                        android:textSize="14dp"
+                        android:inputType="textEmailAddress"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:lines="2">
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+
+
+
+            <!-- ACTIVITY-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimens"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:background="@color/design_default_color_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiko_semibold"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/activity"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp" >
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/taskTitleTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/task_title"
+                    app:hintTextColor="@color/accentLight"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="30"
+                    android:background="@color/design_default_color_background">
+
+                    <EditText
+                        android:id="@+id/taskTitleEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:height="50dp"
+                        android:textSize="14dp"
+                        android:inputType="textAutoCorrect"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:lines="2">
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="@dimen/dimens">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/taskDescriptionTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/task_description"
+                    app:hintTextColor="@color/accentLight"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="500"
+                    android:background="@color/design_default_color_background">
+
+                    <EditText
+                        android:id="@+id/taskDescriptionEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="100dp"
+                        android:layout_weight="1"
+                        android:height="50dp"
+                        android:textSize="14dp"
+                        android:inputType="textMultiLine|textAutoCorrect|textAutoComplete"
+                        android:lines="2">
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+            <!-- LENGTH-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimens"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:background="@color/design_default_color_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiko_semibold"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/length"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp" >
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+               android:background="@color/design_default_color_background"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <Button
+                    android:id="@+id/startDateButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:height="50dp"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/start_date"
+                    android:lines="2"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="8dp">
+                </Button>
+
+                <Button
+                    android:id="@+id/endDateButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:height="50dp"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/end_date"
+                    android:lines="2"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp">
+                </Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/startDateTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/expected_start_date"
+                    app:hintTextColor="@color/accentLight"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:background="@color/design_default_color_background"
+                    app:helperText="@string/date_entry_warning"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/accentLight">
+
+                    <EditText
+                        android:id="@+id/startDateEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="14dp"
+                        android:height="50dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:lines="2"
+                        android:inputType="date"
+                        android:enabled="false">
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/endDateTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/expected_end_date"
+                    app:hintTextColor="@color/accentLight"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:background="@color/design_default_color_background"
+                    app:helperText="@string/date_entry_warning"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/accentLight">
+
+                    <EditText
+                        android:id="@+id/endDateEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="14dp"
+                        android:height="50dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:lines="2"
+                        android:inputType="date"
+                        android:enabled="false">
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/design_default_color_background"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <Button
+                    android:id="@+id/startTimeButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:height="50dp"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/start_time"
+                    android:lines="2"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="8dp">
+                </Button>
+
+                <Button
+                    android:id="@+id/endTimeButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:height="50dp"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/end_time"
+                    android:lines="2"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp">
+                </Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/startTimeTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/start_time"
+                    app:hintTextColor="@color/accentLight"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:background="@color/design_default_color_background">
+
+                    <EditText
+                        android:id="@+id/startTimeEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="14dp"
+                        android:height="50dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:lines="2"
+                        android:inputType="time"
+                        android:enabled="false">
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/endTimeTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/end_time"
+                    app:hintTextColor="@color/accentLight"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:background="@color/design_default_color_background">
+
+                    <EditText
+                        android:id="@+id/endTimeEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="14dp"
+                        android:height="50dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:lines="2"
+                        android:inputType="time"
+                        android:enabled="false">
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+            <!-- PLANNING -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimens"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:background="@color/design_default_color_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiko_semibold"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/planning"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp" >
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/planTimeTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/plan_duration"
+                    app:hintTextColor="@color/accentLight"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:background="@color/design_default_color_background"
+                    android:enabled="false">
+
+                    <EditText
+                        android:id="@+id/planDurationEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:height="50dp"
+                        android:textSize="14dp"
+                        android:inputType="text"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:lines="2">
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/extraDurationTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/extra_duration"
+                    app:hintTextColor="@color/accentLight"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:background="@color/design_default_color_background"
+                    android:enabled="false">
+
+                    <EditText
+                        android:id="@+id/extraDurationEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:height="50dp"
+                        android:textSize="14dp"
+                        android:inputType="text"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:lines="2">
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="@dimen/dimens">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/rawDurationTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/raw_duration"
+                    app:hintTextColor="@color/accentLight"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:background="@color/design_default_color_background"
+                    android:enabled="false">
+
+                    <EditText
+                        android:id="@+id/rawDurationEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:height="50dp"
+                        android:textSize="14dp"
+                        android:inputType="text"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:lines="2">
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+            <!-- ESTABLISHMENT OF PRIORITIES -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimens"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:background="@color/design_default_color_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiko_semibold"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/establish_priorities"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp" >
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="@dimen/dimens"
+                android:background="@color/design_default_color_background">
+
+                    <NumberPicker
+                        android:id="@+id/priorityPicker"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens"/>
+
+            </LinearLayout>
+
+
+
+
+
+
+            <!-- ESTABLISHMENT OF PRIORITIES -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimens"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:background="@color/design_default_color_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiko_semibold"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/notation"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp" >
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="@dimen/dimens"
+                android:background="@color/design_default_color_background">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/notationTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/notation"
+                    app:hintTextColor="@color/accentLight"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:background="@color/design_default_color_background"
+                    app:helperText="@string/notation_helper_text"
+                    app:helperTextEnabled="true"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="200"
+                    app:helperTextTextColor="@color/accentLight">
+
+                    <EditText
+                        android:id="@+id/notationEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="100dp"
+                        android:layout_weight="1"
+                        android:height="50dp"
+                        android:textSize="14dp"
+                        android:inputType="textMultiLine|textAutoCorrect|textAutoComplete"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:lines="2">
+                    </EditText>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/assignTaskNowEFab"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/colorAccent"
+        app:icon="@drawable/ic_done_all"
+        app:iconTint="@android:color/white"
+        android:text="@string/assign_now"
+        android:textColor="@android:color/white"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:gravity="end"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        android:layout_above="@id/assignTaskLaterEFab"
+        app:layout_anchor="@id/assignTaskLaterEFab"
+        app:layout_anchorGravity="top"
+        android:minWidth="40dp"/>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/assignTaskLaterEFab"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="end"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/colorAccent"
+        app:icon="@drawable/ic_later"
+        app:iconTint="@android:color/white"
+        android:text="@string/later"
+        android:textColor="@android:color/white"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:minWidth="40dp"/>
+
+</RelativeLayout>

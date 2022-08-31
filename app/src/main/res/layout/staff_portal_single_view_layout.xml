@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/nameTextViewLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens"
+            android:layout_marginRight="@dimen/dimens"
+            android:layout_marginTop="@dimen/dimens">
+
+            <TextView
+                android:id="@+id/textViewForName"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:height="18dp"
+                android:gravity="center_vertical"
+                android:hint="@string/edit_name"
+                android:lines="2"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/emailTextViewLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens"
+            android:layout_marginRight="@dimen/dimens"
+            android:layout_below="@+id/nameTextViewLinearLayout">
+            <TextView
+                android:id="@+id/textViewForEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:height="15dp"
+                android:gravity="center_vertical"
+                android:lines="2"
+                android:hint="@string/edit_email" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/companyTextViewLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens"
+            android:layout_marginRight="@dimen/dimens"
+
+            android:layout_below="@+id/emailTextViewLinearLayout">
+            <TextView
+                android:id="@+id/textViewForCompany"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:height="15dp"
+                android:gravity="center_vertical"
+                android:lines="2"
+                android:hint="@string/no_company" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/departmentTextViewLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimens"
+        android:layout_marginRight="@dimen/dimens"
+        android:layout_below="@+id/companyTextViewLinearLayout">
+        <TextView
+            android:id="@+id/textViewForDepartment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:height="15dp"
+            android:gravity="center_vertical"
+            android:lines="2"
+            android:hint="@string/no_department" />
+    </LinearLayout>
+
+
+</RelativeLayout>

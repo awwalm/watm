@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/recyclerRelativeLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/taskTitleLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimens"
+        android:layout_marginRight="@dimen/dimens"
+        android:layout_marginTop="@dimen/dimens">
+
+        <TextView
+            android:id="@+id/textViewForTaskTitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:height="20dp"
+            android:gravity="center_vertical"
+            android:hint="@string/task_title"
+            android:lines="2"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/priorityLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/taskTitleLinearLayout"
+        android:layout_marginLeft="@dimen/dimens"
+        android:layout_marginRight="@dimen/dimens"
+        android:layout_marginTop="@dimen/dimens"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/taskTitleLinearLayout">
+
+        <TextView
+            android:id="@+id/textViewForPriority"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:height="20dp"
+            android:hint="@string/priority"
+            android:lines="2"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/holo_red_dark"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/creatorNameLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimens"
+        android:layout_marginRight="@dimen/dimens"
+        android:layout_below="@+id/taskTitleLinearLayout">
+
+        <TextView
+            android:id="@+id/textViewForCreatorName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="12sp"
+            android:height="15dp"
+            android:gravity="center_vertical"
+            android:lines="2"
+            android:hint="@string/creator_name" />
+        <TextView
+            android:id="@+id/textViewForEndTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textSize="12sp"
+            android:height="15dp"
+            android:textAlignment="textEnd"
+            android:lines="2"
+            android:textStyle="bold"
+            android:hint="@string/end_time"
+            android:textColor="@android:color/holo_red_dark"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/creatorEmailLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimens"
+        android:layout_marginRight="@dimen/dimens"
+        android:layout_below="@+id/creatorNameLinearLayout">
+
+        <TextView
+            android:id="@+id/textViewForCreatorEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="12sp"
+            android:height="15dp"
+            android:gravity="center_vertical"
+            android:lines="2"
+            android:hint="@string/creator_email" />
+        <TextView
+            android:id="@+id/textViewForEndDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textSize="12sp"
+            android:height="15dp"
+            android:textAlignment="textEnd"
+            android:lines="2"
+            android:hint="@string/end_date"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_red_dark"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/collaboratorEmailLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimens"
+        android:layout_marginRight="@dimen/dimens"
+        android:layout_below="@+id/creatorEmailLinearLayout">
+        <TextView
+            android:id="@+id/textViewForCollaboratorEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="12sp"
+            android:height="15dp"
+            android:gravity="center_vertical"
+            android:lines="2"
+            android:hint="@string/no_collaborator" />
+        <TextView
+            android:id="@+id/textViewForStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textSize="12sp"
+            android:height="15dp"
+            android:textAlignment="textEnd"
+            android:lines="2"
+            android:hint="@string/status"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_red_dark"/>
+
+        <!-- @TODO to be removed if no longer in use -->
+        <TextView
+            android:id="@+id/textViewForTaskId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:textSize="12sp"
+            android:height="15dp"
+            android:textAlignment="textEnd"
+            android:lines="2"
+            android:hint="@string/task_id"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_red_dark"/>
+        <TextView
+            android:id="@+id/textViewForPlanningDuration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:textSize="12sp"
+            android:height="15dp"
+            android:textAlignment="textEnd"
+            android:lines="2"
+            android:hint="@string/plan_duration"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_red_dark"/>
+        <TextView
+            android:id="@+id/textViewForExtraDuration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:textSize="12sp"
+            android:height="15dp"
+            android:textAlignment="textEnd"
+            android:lines="2"
+            android:hint="@string/extra_duration"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_red_dark"/>
+        <TextView
+            android:id="@+id/textViewForRawDuration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:textSize="12sp"
+            android:height="15dp"
+            android:textAlignment="textEnd"
+            android:lines="2"
+            android:hint="@string/task_id"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_red_dark"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

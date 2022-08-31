@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    android:id="@+id/etfScrollView"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:name="androidx.navigation.fragment.NavHostFragment"
+    tools:context=".tasks.EditTaskFragment"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <RelativeLayout
+        android:id="@+id/editTaskRelativeLayout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".tasks.EditTaskFragment">
+
+
+        <!-- TASK TITLE -->
+        <LinearLayout
+            android:id="@+id/editTaskTitleLinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:background="@color/design_default_color_background">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlinedTaskTitleTextField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/task_title"
+                app:endIconDrawable="@drawable/ic_dont_edit"
+                app:endIconMode="custom"
+                app:helperText="@string/not_editable"
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/accentLight">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textViewForEditTaskTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/amiko_semibold"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/task_title"
+                    android:textAlignment="center"
+                    android:enabled="false"
+                    android:textSize="12sp"
+                    android:lines="2">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+
+
+
+        <!-- TASK DESCRIPTION -->
+        <LinearLayout
+            android:id="@+id/editTaskDescriptionLinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:background="@color/design_default_color_background"
+            android:layout_below="@+id/editTaskTitleLinLayout">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlinedTaskDescriptionTextField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/task_description"
+                app:endIconDrawable="@drawable/ic_dont_edit"
+                app:endIconMode="custom"
+                app:helperText="@string/not_editable"
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/accentLight"
+                app:counterEnabled="true"
+                app:counterMaxLength="500">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textViewForEditTaskDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:text="@string/task_description"
+                    android:textAlignment="center"
+                    android:enabled="false"
+                    android:textSize="10sp"
+                    android:minHeight="40dp"
+                    android:inputType="textMultiLine|textAutoCorrect|textAutoComplete">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+
+
+
+
+
+
+        <!-- START DATE -->
+        <LinearLayout
+            android:id="@+id/editStartDateLinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:background="@color/design_default_color_background"
+            android:layout_below="@+id/editTaskDescriptionLinLayout">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlinedStartDateTextField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/start_date"
+                app:endIconDrawable="@drawable/ic_dont_edit"
+                app:endIconMode="custom"
+                app:helperText="@string/start_date_warning"
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/accentLight">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textViewForEditStartDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:text="@string/task_description"
+                    android:textAlignment="center"
+                    android:enabled="false"
+                    android:textSize="12sp"
+                    android:minHeight="40dp"
+                    android:inputType="textMultiLine|textAutoCorrect|textAutoComplete">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+
+
+
+
+
+
+        <!-- START TIME -->
+        <LinearLayout
+            android:id="@+id/editStartTimeLinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:background="@color/design_default_color_background"
+            android:layout_below="@+id/editStartDateLinLayout">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedStartTimeTextField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/start_time"
+            app:endIconDrawable="@drawable/ic_dont_edit"
+            app:endIconMode="custom"
+            app:helperText="@string/task_start_warning"
+            app:helperTextEnabled="true"
+            app:helperTextTextColor="@color/accentLight">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textViewForEditStartTime"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/task_description"
+                android:textAlignment="center"
+                android:enabled="false"
+                android:lines="2"
+                android:textSize="12sp">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+        <!-- ALPEN PLAN TIME -->
+        <LinearLayout
+            android:id="@+id/editPlanTimeLinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:background="@color/design_default_color_background"
+            android:layout_below="@+id/editStartTimeLinLayout">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlinedPlanTimeTextField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/alpen_planning_time"
+                app:endIconDrawable="@drawable/ic_dont_edit"
+                app:endIconMode="custom"
+                app:helperText="@string/alpen_warning"
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/accentLight">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textViewForEditPlanTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/task_description"
+                    android:textAlignment="center"
+                    android:enabled="false"
+                    android:lines="2"
+                    android:textSize="12sp">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+        <!-- DUE TIME/END TIME -->
+        <LinearLayout
+            android:id="@+id/editDueTimeLinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:background="@color/design_default_color_background"
+            android:layout_below="@+id/editPlanTimeLinLayout">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlinedEndTimeTextField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/end_time"
+                app:endIconDrawable="@drawable/ic_dont_edit"
+                app:endIconMode="custom"
+                app:helperText="@string/task_completion_warning"
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/accentLight">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textViewForEditDueTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/task_description"
+                    android:textAlignment="center"
+                    android:enabled="false"
+                    android:lines="2"
+                    android:textSize="12sp">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- @TODO : consider removing if no longer needed -->
+            <TextView
+                android:id="@+id/textViewForEditTaskId"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:fontFamily="@font/amiko_semibold"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/menu_alpen"
+                android:textAlignment="center"
+                android:layout_weight="0" />
+            <TextView
+                android:id="@+id/textViewForEditPlanningDuration"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:fontFamily="@font/amiko_semibold"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/menu_alpen"
+                android:textAlignment="center"
+                android:layout_weight="0" />
+            <TextView
+                android:id="@+id/textViewForEditExtraDuration"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:fontFamily="@font/amiko_semibold"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/menu_alpen"
+                android:textAlignment="center"
+                android:layout_weight="0" />
+            <TextView
+                android:id="@+id/textViewForEditRawDuration"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:fontFamily="@font/amiko_semibold"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/menu_alpen"
+                android:textAlignment="center"
+                android:layout_weight="0" />
+
+
+        </LinearLayout>
+
+
+
+
+        <!-- STATUS -->
+        <LinearLayout
+            android:id="@+id/editStatusLinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:background="@color/design_default_color_background"
+            android:layout_below="@+id/editDueTimeLinLayout">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlinedStatusTextField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/status"
+                app:endIconDrawable="@drawable/ic_dont_edit"
+                app:endIconMode="custom"
+                app:helperText="@string/completion_tracker"
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/accentLight">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textViewForEditStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/status"
+                    android:textAlignment="center"
+                    android:enabled="false"
+                    android:lines="2"
+                    android:textSize="12sp">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/editMarkAsDoneLinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:background="@color/design_default_color_background"
+            android:layout_below="@+id/editStatusLinLayout">
+
+            <Button
+                android:id="@+id/markAsDoneButton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amiko_semibold"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/mark_as_done"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:lines="2"
+                android:backgroundTint="@color/accentLight"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/editSetAlarmsLinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:background="@color/design_default_color_background"
+            android:layout_below="@+id/editMarkAsDoneLinLayout">
+
+            <Button
+                android:id="@+id/setAlarmsButton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amiko_semibold"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/set_plan_time_alarm"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:lines="2"
+                android:backgroundTint="@color/accentLight"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/editSetRawAlarmLinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:background="@color/design_default_color_background"
+            android:layout_below="@+id/editSetAlarmsLinLayout">
+
+            <Button
+                android:id="@+id/setRawAlarmButton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amiko_semibold"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/set_end_time_alarm"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:lines="2"
+                android:backgroundTint="@color/accentLight"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/editAskForHelpLinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:background="@color/design_default_color_background"
+            android:layout_below="@+id/editSetRawAlarmLinLayout">
+
+            <Button
+                android:id="@+id/outlinedAskForHelpButton"
+                app:icon="@drawable/ic_mood_bad"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amiko_semibold"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/ask_for_help"
+                android:textColor="@color/accent"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:lines="2"
+                style="?attr/materialButtonOutlinedStyle"
+                android:outlineSpotShadowColor="@color/accentLight"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/editHelpConfirmationLinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="50dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:background="@color/design_default_color_background"
+            android:layout_below="@+id/editAskForHelpLinLayout">
+
+            <TextView
+                android:id="@+id/helpConfirmationTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/help_request_sent"
+                android:textColor="@color/accent"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:lines="2"
+                android:textSize="10sp"
+                tools:ignore="SmallSp"
+                android:visibility="invisible"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>
