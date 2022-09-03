@@ -1,10 +1,10 @@
 # Work Allocation and Time Management System
+
 Adaptation of the <span title="Activity, Length, Planning, Establishment of Priorities, Notation">ALPEN</span> 
 time management framework into an Android application<span title="see footnote on confrence paper with complete introduction">[^1]</span>.
 
-## Footnotes
-
 <!-- Footnotes formatted by GitHub to appear here -->
+
 [^1]: Mohammed, A., & Selvarajah, C.S. (2022). Work Allocation and Time Management System.
 In N. N. Omar, N. S. Choo, N. Jayaram, A. A. Rachman, & H. Hassan (Eds.), 
 <i>Proceedings of the 1st International Academic Conference 2021</i> (pp. 159-165). 
