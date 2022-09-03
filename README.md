@@ -1,6 +1,6 @@
 # Work Allocation and Time Management System
-Adaptation of the ALPEN <span title="Activity, Length, Planning, Establishment of Priorities, Notation"> time management framework into an Android application
-<span title="see footnote on confrence paper with complete introduction to the app">[^1]</span>.
+Adaptation of the <span title="Activity, Length, Planning, Establishment of Priorities, Notation">ALPEN</span> 
+time management framework into an Android application<span title="see footnote on confrence paper with complete introduction">[^1]</span>.
 
 ## Footnotes
 
