@@ -3,6 +3,9 @@
 An accompanying repo for the IUMW IAC 2021 conference paper titled _Work Allocation and Time Management System_<span title="see footnote on confrence paper with complete introduction">[^1]</span>. This Android application implements the <span title="Activity, Length, Planning, Establishment of Priorities, Notation">ALPEN</span> 
 time management framework.
 
+<img src="https://user-images.githubusercontent.com/67423428/193908108-00b984d6-20f3-4699-873a-6ef62e5729e5.png" height="400"/>
+
+
 ## Implementing The ALPEN _Plan Time_ and _Extra Time_
  The core functionality of the ALPEN procedure begins by creating references corresponding to GUI elements such as buttons, selectors, and text fields for specifying task preferences.
  
