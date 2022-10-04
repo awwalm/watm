@@ -15,6 +15,8 @@ Prior to registering the task being assigned, the credentials of all associated 
 With exception handling and input validation
 mechanisms in place, and all ALPEN related properties identified, the necessary values are then sent to the Tasks and Notifications nodes in the Firebase Realtime Database, effectively registering the creation of a task governed by the ALPEN framework. The behavioural model below illustrates this routine.
 
+![image](https://user-images.githubusercontent.com/67423428/193907672-4e88c560-373f-482b-b14c-24df3abc4e93.png)
+
 ### Prerequisites
 
 - **Java 8**: At the moment of writing, the source code was written with Java 8. Should you wish to use a higher/up-to-date version, be sure to account for compatibility makeshifts.
