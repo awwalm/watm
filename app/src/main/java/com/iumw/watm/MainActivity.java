@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements
 
         // check orientation configuration to avoid loss of activity or fragment data
         // if this doesn't work, change it explicitly in the manifest, else
-        /* refer to <a href="https://www.youtube.com/watch?v=Njj9qb5v2aw"></a> */
+        /* refer to <a href="https://www.youtube.com/watch?v=Njj9qb5v2aw">this link</a> */
         if (savedInstanceState == null)
         {
             // swap and exchange fragments only when there is currently no data
