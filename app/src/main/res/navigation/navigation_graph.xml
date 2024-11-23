@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    tools:ignore="UnusedNavigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.iumw.watm.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@+id/signedInActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.iumw.watm.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_staffPortalFragment"
+            app:destination="@id/staffPortalFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_workflowsFragment2"
+            app:destination="@id/workflowsFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/staffPortalFragment"
+        android:name="com.iumw.watm.portal.StaffPortalFragment"
+        android:label="fragment_staff_portal"
+        tools:layout="@layout/fragment_staff_portal" >
+        <action
+            android:id="@+id/staffPortalToAssignTask"
+            app:destination="@id/assignTaskFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/signedInActivity"
+        android:name="com.iumw.watm.SignedInActivity"
+        android:label="activity_signed_in"
+        tools:layout="@layout/activity_signed_in" >
+        <action
+            android:id="@+id/action_signedInActivity_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </activity>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.iumw.watm.profile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/assignTaskFragment"
+        android:name="com.iumw.watm.tasks.AssignTaskFragment"
+        android:label="fragment_assign_task"
+        tools:layout="@layout/fragment_assign_task" />
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.iumw.watm.tasks.TasksFragment"
+        android:label="fragment_tasks"
+        tools:layout="@layout/fragment_tasks" >
+        <action
+            android:id="@+id/action_tasksFragment_to_editTaskFragment"
+            app:destination="@id/editTaskFragment" />
+        <action
+            android:id="@+id/action_tasksFragment_to_assignTaskFragment"
+            app:destination="@id/assignTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTaskFragment"
+        android:name="com.iumw.watm.tasks.EditTaskFragment"
+        android:label="fragment_edit_task"
+        tools:layout="@layout/fragment_edit_task" />
+    <fragment
+        android:id="@+id/assignedTasksFragment"
+        android:name="com.iumw.watm.workflows.assigned.AssignedTasksFragment"
+        android:label="fragment_assigned_tasks"
+        tools:layout="@layout/fragment_assigned_tasks" />
+    <fragment
+        android:id="@+id/workflowsFragment2"
+        android:name="com.iumw.watm.workflows.WorkflowsFragment"
+        android:label="WorkflowsFragment"
+        tools:layout="@layout/fragment_workflows">
+        <action
+            android:id="@+id/action_workflowsFragment2_to_assignedTasksFragment"
+            app:destination="@id/assignedTasksFragment" />
+        <action
+            android:id="@+id/action_workflowsFragment2_to_completedTasksFragment"
+            app:destination="@id/completedTasksFragment" />
+        <action
+            android:id="@+id/action_workflowsFragment2_to_helpRequestsFragment"
+            app:destination="@id/helpRequestsFragment" />
+        <action
+            android:id="@+id/action_workflowsFragment2_to_startedTasksFragment"
+            app:destination="@id/startedTasksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/helpRequestsFragment"
+        android:name="com.iumw.watm.workflows.help.HelpRequestsFragment"
+        android:label="fragment_help_requests"
+        tools:layout="@layout/fragment_help_requests" />
+    <fragment
+        android:id="@+id/completedTasksFragment"
+        android:name="com.iumw.watm.workflows.completed.CompletedTasksFragment"
+        android:label="fragment_completed_tasks"
+        tools:layout="@layout/fragment_completed_tasks" />
+    <fragment
+        android:id="@+id/startedTasksFragment"
+        android:name="com.iumw.watm.workflows.started.StartedTasksFragment"
+        android:label="fragment_started_tasks"
+        tools:layout="@layout/fragment_started_tasks" />
+</navigation>
