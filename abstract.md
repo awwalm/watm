@@ -12,8 +12,8 @@ Time management and work allocation are some of the most important aspects of co
 
 ### SCOPUS Indexed Journal:
 Mohammed, A., & Selvarajah, C.S. (2025). Work Allocation and Time Management System. 
-International Journal of Computer Science and Mobile Computing (IJCSMC). 
-Accepted for publication [Expected: Spring 2025]. Link to Abstract: https://github.com/awwalm/watm/blob/master/abstract.md
+_International Journal of Computer Science and Mobile Computing (IJCSMC)_. 
+Accepted for publication [Expected: Spring 2025].
 
 ### Preprint (Conference Proceedings Version):
 Mohammed, A., & Selvarajah, C.S. (2022). Work Allocation and Time Management System.
